@@ -2,9 +2,12 @@ import React from "react";
 import "./DisplayInfor.scss";
 
 class DisplayInfor extends React.Component {
-  state = {
-    isShow: true,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isShow: true,
+    };
+  }
 
   handleOnClick = (event) => {
     this.setState({

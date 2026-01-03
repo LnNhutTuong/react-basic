@@ -56,8 +56,6 @@ class AddUserInfor extends React.Component {
               this.handleOnChangeName(event);
             }}
           ></input>
-          <button>submit</button>
-
           <br></br>
 
           <label>Your age:</label>
@@ -68,6 +66,7 @@ class AddUserInfor extends React.Component {
               this.handleOnChangeAge(event);
             }}
           ></input>
+          <br />
           <button>submit</button>
         </form>
       </div>
