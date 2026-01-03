@@ -31,13 +31,17 @@ class MyComponent extends React.Component {
   render() {
     //DRY: Don't repeat yourself
     return (
-      <div>
-        {/* cha sang con ko can () */}
-        <AddUserInfor AddNewUser={this.handleAddNewUser} />
-        <br></br>
-        <DisplayInfor listUsers={this.state.listUsers} />
-        <hr />
-      </div>
+      <>
+        {" "}
+        <div className="a">
+          {/* cha sang con ko can () */}
+          <AddUserInfor AddNewUser={this.handleAddNewUser} />
+        </div>
+        <div className="b">
+          {" "}
+          <DisplayInfor listUsers={this.state.listUsers} />
+        </div>
+      </>
     );
   }
 }
