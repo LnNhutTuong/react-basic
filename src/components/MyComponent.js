@@ -7,6 +7,9 @@ class MyComponent extends React.Component {
   render() {
     const myAge = 19;
     const myInfor = [`a`, `b`, `c`];
+
+    //DRY: Don't repeat yourself
+
     return (
       <div>
         <UserInfor />
