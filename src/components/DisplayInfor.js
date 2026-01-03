@@ -1,6 +1,6 @@
 import React from "react";
 import "./DisplayInfor.scss";
-import logo from "./../logo.svg";
+
 class DisplayInfor extends React.Component {
   state = {
     isShow: true,
@@ -12,6 +12,8 @@ class DisplayInfor extends React.Component {
     });
   };
 
+  handle;
+
   render() {
     // sandwich fucking sandwich
     const { listUsers } = this.props;
@@ -19,7 +21,6 @@ class DisplayInfor extends React.Component {
 
     return (
       <div className="display-infor-container">
-        <img src={logo} />
         <div>
           <div>
             {/* su dung nen () */}
@@ -37,8 +38,15 @@ class DisplayInfor extends React.Component {
               return (
                 <div key={user.id} className={+user.age > 18 ? "green" : "red"}>
                   <hr />
-                  <div>My name's {user.name} </div>
-                  <div>My age' {user.age}</div>
+                  <div>
+                    <div>My name's {user.name} </div>
+                    <div>My age' {user.age}</div>
+                  </div>
+                  <div>
+                    <button onClick={() => this.props.DeleteUser(user.id)}>
+                      X
+                    </button>
+                  </div>
                 </div>
               );
             })}

@@ -14,16 +14,17 @@ class MyComponent extends React.Component {
   handleAddNewUser = (userObj) => {
     alert("Success");
 
-    //bad code ewww
-    // let listUsersNew = this.state.listUsers;
-    // listUsersNew.unshift(userObj);
-    // this.setState({
-    //   listUsers: listUsersNew,
-    // });
-
-    //good code yeahhh
     this.setState({
       listUsers: [userObj, ...this.state.listUsers],
+    });
+  };
+
+  handleDeleteUser = (userid) => {
+    alert("Success");
+
+    const newList = this.state.listUsers.filter((item) => item.id !== userid);
+    this.setState({
+      listUsers: newList,
     });
   };
 
@@ -32,14 +33,15 @@ class MyComponent extends React.Component {
     //DRY: Don't repeat yourself
     return (
       <>
-        {" "}
         <div className="a">
           {/* cha sang con ko can () */}
           <AddUserInfor AddNewUser={this.handleAddNewUser} />
         </div>
         <div className="b">
-          {" "}
-          <DisplayInfor listUsers={this.state.listUsers} />
+          <DisplayInfor
+            listUsers={this.state.listUsers}
+            DeleteUser={this.handleDeleteUser}
+          />
         </div>
       </>
     );
